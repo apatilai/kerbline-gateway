@@ -1,0 +1,15 @@
+# Build from repository root: docker build -f phase_b_poc/Dockerfile.telemetry .
+FROM python:3.11-slim
+
+WORKDIR /app
+COPY phase_b_poc/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY phase_b_poc/pii_vault.py phase_b_poc/pre_pass.py phase_b_poc/app.py ./
+COPY kerbline_telemetry/ ./kerbline_telemetry/
+
+RUN useradd -m -u 10001 kerbline
+USER kerbline
+
+EXPOSE 8080
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8080"]

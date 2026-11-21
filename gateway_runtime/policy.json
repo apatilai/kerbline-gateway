@@ -1,0 +1,13 @@
+{
+  "version": "pilot-readonly-1",
+  "subjects": {},
+  "roles": {
+    "analyst": {"tools": ["invoice_summary", "execute_plan"], "destinations": ["external_model", "internal_app"]},
+    "auditor": {"tools": ["invoice_summary"], "destinations": ["external_model", "internal_app"]}
+  },
+  "tenant": "kerbline-test",
+  "adapter_url": "",
+  "allowed_origins": [],
+  "user_audience": "",
+  "vertex": {"enabled": false, "project": "", "region": "australia-southeast1", "model": "gemini-3.8-flash"}
+}

@@ -1,0 +1,37 @@
+# Credentials and machine-specific identity / deployment configuration
+.local/
+.env
+.env.*
+!.env.example
+**/console-credentials.json
+**/*service-account*.json
+**/*credentials*.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local observations, generated documents, build logs and customer records
+/tmp/
+/output/
+/kerbline_explorer_ui/data/
+/kerbline_explorer_ui/screenshots/
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+*.log
+*.docx
+*.pdf
+
+# Python / JavaScript environments and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+node_modules/
+.DS_Store

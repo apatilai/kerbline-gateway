@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kerbline · Customer console</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/traffic.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#overview"><span class="brandmark">K</span><span>kerbline<span class="brand-sub">Customer console</span></span></a>
+      <div class="workspace-label">YOUR WORKSPACE</div>
+      <nav id="navigation" aria-label="Main navigation"></nav>
+      <div class="sidebar-bottom"><span class="small-dot"></span> Local control surface<p>Gateway observability · v0.3</p><button id="present" class="text-button">Open presentation view ↗</button></div>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar">
+        <div><span class="eyebrow">ENVIRONMENT</span><strong id="environment-name">Not configured</strong><span id="stage" class="badge">Unconfigured</span></div>
+        <div class="topbar-end"><span id="region">Region not set</span><span class="divider"></span><span class="badge warning">Writes disabled</span><span id="access-role" class="badge info"></span><button id="switch-access" class="icon-button" aria-label="Switch access credential">⇥</button><button id="refresh" class="icon-button" aria-label="Refresh console">↻</button></div>
+      </header>
+      <div class="truth-banner"><span class="banner-icon">i</span><span>Inventory and readiness console. Resource imports are reported observations. Live ERP processing, business approvals and federated identity are not connected.</span></div>
+      <main id="main" tabindex="-1"></main>
+      <footer>Customer infrastructure stays customer-owned. Status is shown with its source and observation time.</footer>
+    </div>
+  </div>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="resource-dialog" aria-labelledby="resource-title"><div id="resource-detail"></div><form method="dialog"><button class="button secondary">Close detail</button></form></dialog>
+  <dialog id="auth-dialog" aria-labelledby="auth-title"><h2 id="auth-title">Connect to your console</h2><p>Enter your server-configured role credential. Access is enforced by the API. The credential stays in memory for this tab; this is not federated SSO.</p><form id="auth-form"><label>Console access token<input id="access-token" type="password" required autocomplete="off"></label><div class="actions"><button class="button">Connect</button></div><p id="auth-error" role="alert"></p></form></dialog>
+</body>
+</html>
